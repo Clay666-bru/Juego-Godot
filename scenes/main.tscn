@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://c4k247rd0uvlx"]
+
+[ext_resource type="Script" uid="uid://gvk5yygh2nsd" path="res://scripts/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dojpalgv4x3bq" path="res://scenes/player/player.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/camera_controller.tscn" id="3"]
+
+[node name="Main" type="Node" unique_id=1920682584]
+script = ExtResource("1")
+
+[node name="World" type="Node2D" parent="." unique_id=820993887]
+
+[node name="LevelContainer" type="Node2D" parent="World" unique_id=489822827]
+
+[node name="Player" parent="World" unique_id=22034106 instance=ExtResource("2")]
+
+[node name="CameraController" parent="World" unique_id=685204842 instance=ExtResource("3")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1865031218]
+
+[node name="HealthLabel" type="Label" parent="UI" unique_id=581219816]
+offset_left = 10.0
+offset_top = 10.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "Vida: 3/3"
+
+[node name="WeaponLabel" type="Label" parent="UI" unique_id=1304373642]
+offset_left = 10.0
+offset_top = 32.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Pistola"
+
+[node name="WaveAnnouncement" type="Label" parent="UI" unique_id=1748619408]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "OLEADA 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BossHealthBar" type="Control" parent="UI" unique_id=1338696825]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 810.0
+offset_top = 50.0
+offset_right = 1110.0
+offset_bottom = 84.0
+
+[node name="Label" type="Label" parent="UI/BossHealthBar" unique_id=1804977067]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 200.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "JEFE"
+horizontal_alignment = 1
+
+[node name="Bg" type="ColorRect" parent="UI/BossHealthBar" unique_id=1301420948]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 22.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Fill" type="ColorRect" parent="UI/BossHealthBar" unique_id=249480703]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 22.0
+offset_bottom = -2.0
+color = Color(0.8, 0.1, 0.1, 1)
+
+[node name="GameOverOverlay" type="ColorRect" parent="UI" unique_id=374763639]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.7)
+
+[node name="GameOverLabel" type="Label" parent="UI/GameOverOverlay" unique_id=446660836]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 237.0
+offset_right = 992.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 72
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="UI/GameOverOverlay" unique_id=1938595893]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 337.0
+offset_right = 892.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Oleada alcanzada: 1"
+horizontal_alignment = 1
+
+[node name="RestartLabel" type="Label" parent="UI/GameOverOverlay" unique_id=2003629109]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 397.0
+offset_right = 892.0
+offset_bottom = 437.0
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 22
+text = "Presiona R para reiniciar"
+horizontal_alignment = 1

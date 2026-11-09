@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://duhimdk6xr5oe"]
+
+[ext_resource type="Script" uid="uid://57iw8ccxdqpl" path="res://scripts/levels/level_1.gd" id="1"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(2000, 24)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(32, 600)
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(300, 16)
+
+[sub_resource type="RectangleShape2D" id="5"]
+size = Vector2(120, 16)
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(32, 48)
+
+[node name="Level1" type="Node2D" unique_id=625757231]
+script = ExtResource("1")
+bg_offset_y = -300.0
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=1115387737]
+position = Vector2(1000, 500)
+
+[node name="Terrain" type="Node2D" parent="." unique_id=1343187382]
+
+[node name="MainGround" type="StaticBody2D" parent="Terrain" unique_id=543610617]
+position = Vector2(1000, 588)
+
+[node name="MainGround/CollisionShape2D" type="CollisionShape2D" parent="Terrain/MainGround" unique_id=1655642076]
+shape = SubResource("1")
+
+[node name="MainGround/Visual" type="ColorRect" parent="Terrain/MainGround" unique_id=1120022575]
+offset_left = -1000.0
+offset_top = -12.0
+offset_right = 1000.0
+offset_bottom = 12.0
+color = Color(0.35, 0.25, 0.15, 1)
+
+[node name="LeftWall" type="StaticBody2D" parent="Terrain" unique_id=2026078455]
+position = Vector2(0, 300)
+
+[node name="LeftWall/CollisionShape2D" type="CollisionShape2D" parent="Terrain/LeftWall" unique_id=262205673]
+shape = SubResource("2")
+
+[node name="RightWall" type="StaticBody2D" parent="Terrain" unique_id=2013003141]
+position = Vector2(2000, 300)
+
+[node name="RightWall/CollisionShape2D" type="CollisionShape2D" parent="Terrain/RightWall" unique_id=1393644847]
+shape = SubResource("2")
+
+[node name="CenterPlatform" type="StaticBody2D" parent="Terrain" unique_id=684175066]
+position = Vector2(1000, 420)
+
+[node name="CenterPlatform/CollisionShape2D" type="CollisionShape2D" parent="Terrain/CenterPlatform" unique_id=11361297]
+shape = SubResource("4")
+
+[node name="CenterPlatform/Visual" type="ColorRect" parent="Terrain/CenterPlatform" unique_id=1639268715]
+offset_left = -150.0
+offset_top = -8.0
+offset_right = 150.0
+offset_bottom = 8.0
+color = Color(0.5, 0.35, 0.15, 1)
+
+[node name="LeftPlatform" type="StaticBody2D" parent="Terrain" unique_id=772091434]
+position = Vector2(200, 460)
+
+[node name="LeftPlatform/CollisionShape2D" type="CollisionShape2D" parent="Terrain/LeftPlatform" unique_id=1910993479]
+shape = SubResource("5")
+
+[node name="LeftPlatform/Visual" type="ColorRect" parent="Terrain/LeftPlatform" unique_id=178339396]
+offset_left = -60.0
+offset_top = -8.0
+offset_right = 60.0
+offset_bottom = 8.0
+color = Color(0.5, 0.35, 0.15, 1)
+
+[node name="RightPlatform" type="StaticBody2D" parent="Terrain" unique_id=884700356]
+position = Vector2(1800, 460)
+
+[node name="RightPlatform/CollisionShape2D" type="CollisionShape2D" parent="Terrain/RightPlatform" unique_id=1048048594]
+shape = SubResource("5")
+
+[node name="RightPlatform/Visual" type="ColorRect" parent="Terrain/RightPlatform" unique_id=642755245]
+offset_left = -60.0
+offset_top = -8.0
+offset_right = 60.0
+offset_bottom = 8.0
+color = Color(0.5, 0.35, 0.15, 1)
+
+[node name="Crate1" type="StaticBody2D" parent="Terrain" unique_id=13244406]
+position = Vector2(400, 556)
+
+[node name="Crate1/CollisionShape2D" type="CollisionShape2D" parent="Terrain/Crate1" unique_id=1934491309]
+shape = SubResource("3")
+
+[node name="Crate1/Visual" type="ColorRect" parent="Terrain/Crate1" unique_id=1037905685]
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 24.0
+color = Color(0.4, 0.3, 0.15, 1)
+
+[node name="Crate2" type="StaticBody2D" parent="Terrain" unique_id=336803489]
+position = Vector2(700, 556)
+
+[node name="Crate2/CollisionShape2D" type="CollisionShape2D" parent="Terrain/Crate2" unique_id=2104655778]
+shape = SubResource("3")
+
+[node name="Crate2/Visual" type="ColorRect" parent="Terrain/Crate2" unique_id=1560914874]
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 24.0
+color = Color(0.4, 0.3, 0.15, 1)
+
+[node name="Crate3" type="StaticBody2D" parent="Terrain" unique_id=798491858]
+position = Vector2(1300, 556)
+
+[node name="Crate3/CollisionShape2D" type="CollisionShape2D" parent="Terrain/Crate3" unique_id=1338694923]
+shape = SubResource("3")
+
+[node name="Crate3/Visual" type="ColorRect" parent="Terrain/Crate3" unique_id=1331490603]
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 24.0
+color = Color(0.4, 0.3, 0.15, 1)
+
+[node name="Crate4" type="StaticBody2D" parent="Terrain" unique_id=928393794]
+position = Vector2(1600, 556)
+
+[node name="Crate4/CollisionShape2D" type="CollisionShape2D" parent="Terrain/Crate4" unique_id=865470451]
+shape = SubResource("3")
+
+[node name="Crate4/Visual" type="ColorRect" parent="Terrain/Crate4" unique_id=1413438679]
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 24.0
+color = Color(0.4, 0.3, 0.15, 1)
+
+[node name="Spawners" type="Node2D" parent="." unique_id=1070355938]
+
+[node name="Ground" type="Node2D" parent="Spawners" unique_id=1633114261]
+
+[node name="G1" type="Marker2D" parent="Spawners/Ground" unique_id=879886711]
+position = Vector2(50, 560)
+
+[node name="G2" type="Marker2D" parent="Spawners/Ground" unique_id=156324518]
+position = Vector2(250, 560)
+
+[node name="G3" type="Marker2D" parent="Spawners/Ground" unique_id=336303101]
+position = Vector2(500, 560)
+
+[node name="G4" type="Marker2D" parent="Spawners/Ground" unique_id=458151999]
+position = Vector2(800, 560)
+
+[node name="G5" type="Marker2D" parent="Spawners/Ground" unique_id=1501423450]
+position = Vector2(1200, 560)
+
+[node name="G6" type="Marker2D" parent="Spawners/Ground" unique_id=1191490325]
+position = Vector2(1500, 560)
+
+[node name="G7" type="Marker2D" parent="Spawners/Ground" unique_id=2027469063]
+position = Vector2(1750, 560)
+
+[node name="G8" type="Marker2D" parent="Spawners/Ground" unique_id=709258653]
+position = Vector2(1950, 560)
+
+[node name="High" type="Node2D" parent="Spawners" unique_id=1905918700]
+
+[node name="H1" type="Marker2D" parent="Spawners/High" unique_id=2024428578]
+position = Vector2(900, 390)
+
+[node name="H2" type="Marker2D" parent="Spawners/High" unique_id=454282845]
+position = Vector2(1100, 390)
+
+[node name="H3" type="Marker2D" parent="Spawners/High" unique_id=1046580053]
+position = Vector2(180, 430)
+
+[node name="H4" type="Marker2D" parent="Spawners/High" unique_id=1948468737]
+position = Vector2(1820, 430)
+
+[node name="BossSpawn" type="Marker2D" parent="Spawners" unique_id=1894821197]
+position = Vector2(1800, 500)

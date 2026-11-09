@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c4mesrdekiunm"]
+
+[ext_resource type="Script" uid="uid://bta40x5ydysg1" path="res://scripts/enemies/heavy.gd" id="1"]
+[ext_resource type="SpriteFrames" uid="uid://cdjohcorssg0i" path="res://assets/sprites/enemies/sicario_frames.tres" id="2"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(28, 40)
+
+[node name="Heavy" type="CharacterBody2D" unique_id=924732815]
+collision_layer = 4
+script = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183477501]
+shape = SubResource("1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=585182926]
+sprite_frames = ExtResource("2")
+animation = &"run"
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=988684054]
+one_shot = true
+
+[node name="VisibilityNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=71552882]
+
+[node name="ObstacleRay" type="RayCast2D" parent="." unique_id=767169192]
+target_position = Vector2(50, 0)
